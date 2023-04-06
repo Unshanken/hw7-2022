@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
 			//向前跳过将当前视频提前10秒。如果超过了视频长度，请返回视频的开头，不再继续。记录视频的当前位置
 			if (video.currentTime + 10 > video.duration){
 				video.currentTime = 0
-				video.pause()
+				video.play()
 			}else{
 				video.currentTime += 10
 				video.play()
