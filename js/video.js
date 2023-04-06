@@ -24,9 +24,6 @@ window.addEventListener("load", function () {
             video.play()
 			//初始化音量信息
 	    volume.innerText = volumeValue + '%'
-	    if(volumeValue > 0){
-		    mute.innerText = 'Unmute'
-	    }
         }
         if (text == 'Pause Video') {
             video.pause()
@@ -56,15 +53,15 @@ window.addEventListener("load", function () {
     //静音和恢复
 	mute.onclick = () => {
 		let muteText = mute.innerText
-		if (muteText === 'Mute') {
+		if (muteText === 'Unmute') {
 			//原来是静音状态，点击改为非静音状态，并把音量还原为未静音时的音量
-			mute.innerText = 'Unmute'
+			mute.innerText = 'Mute'
 			video.volume = volumeValue / 100;
 			volume.innerText = volumeValue + '%'
 			slider.value = volumeValue
 		} else {
 			//原来是非静音状态，点击改为静音状态，并把音量改为0,
-			mute.innerText = 'Mute'
+			mute.innerText = 'Unmute'
 			video.volume = 0;
 			volume.innerText = 0 + '%'
 			slider.value = 0
@@ -78,9 +75,9 @@ window.addEventListener("load", function () {
 		video.play()
 		if (video.volume === 0) {
 			//显示静音
-			mute.innerText = 'Mute'
-		} else {
 			mute.innerText = 'Unmute'
+		} else {
+			mute.innerText = 'Mute'
 		}
 	}
 	//点击oldSchool
