@@ -23,7 +23,10 @@ window.addEventListener("load", function () {
         if (text == 'Play Video') {
             video.play()
 			//初始化音量信息
-			volume.innerText = volumeValue + '%'
+	    volume.innerText = volumeValue + '%'
+	    if(volumeValue > 0){
+		    mute.innerText = 'Unmute'
+	    }
         }
         if (text == 'Pause Video') {
             video.pause()
